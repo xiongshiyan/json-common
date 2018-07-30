@@ -1,4 +1,4 @@
-package cn.zytx.common.json.base;
+package cn.zytx.common.json.impl;
 
 import cn.zytx.common.json.Json;
 import cn.zytx.common.json.JsonException;

@@ -1,7 +1,6 @@
-package cn.zytx.common.json.base;
+package cn.zytx.common.json.impl;
 
 import cn.zytx.common.json.JsonObject;
-import cn.zytx.common.json.util.ValueCompatible;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
