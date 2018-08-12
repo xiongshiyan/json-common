@@ -19,6 +19,7 @@ buildscript {
 }
 
 apply plugin: 'java'
+apply plugin: 'maven'
 apply plugin: 'maven-publish'
 //用于上传到jcenter
 apply plugin: 'com.jfrog.bintray'
