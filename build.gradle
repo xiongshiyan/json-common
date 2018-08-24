@@ -1,8 +1,12 @@
 def VERSION = '1.0'
-def ARTIFACT_ID = 'common-json'
+def ARTIFACT_ID = 'json-common'
 def GROUP_ID = 'top.jfunc.json'
 def TYPE = 'jar'
 def DESCRIPTION = 'common json interface define and base impl with map and list'
+def gitUrl = 'https://gitee.com/xxssyyyyssxx/json-common.git'
+def siteUrl = 'https://gitee.com/xxssyyyyssxx/json-common'
+def REPO_NAME = 'json'
+
 
 group GROUP_ID
 version VERSION
@@ -91,9 +95,6 @@ tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
 
-def gitUrl = 'https://gitee.com/xxssyyyyssxx/common-json.git'
-def siteUrl = 'https://gitee.com/xxssyyyyssxx/common-json'
-
 install {
     repositories.mavenInstaller {
         // This generates POM.xml with proper parameters
@@ -167,7 +168,7 @@ bintray {
 
     configurations = ['archives']
     pkg {
-        repo = "maven"
+        repo = REPO_NAME
         name = ARTIFACT_ID //项目名称
         websiteUrl = siteUrl
         vcsUrl = gitUrl
