@@ -50,17 +50,16 @@ def NEXUS_USERNAME='admin'
 //登录nexus oss的密码
 def NEXUS_PASSWORD='admin123'
 
-/*
 uploadArchives {
     configuration = configurations.archives
     repositories {
         mavenDeployer {
-            snapshotRepository(url: MAVEN_REPO_SNAPSHOT_URL) {
+            /*snapshotRepository(url: MAVEN_REPO_SNAPSHOT_URL) {
                 authentication(userName: NEXUS_USERNAME, password: NEXUS_PASSWORD)
             }
             repository(url: MAVEN_REPO_RELEASE_URL) {
                 authentication(userName: NEXUS_USERNAME, password: NEXUS_PASSWORD)
-            }
+            }*/
             repository(url: uri('C:\\Users\\xiongshiyan\\.m2\\repository')) //定义本地maven仓库的地址
 //            repository(url: uri('C:\\Users\\xiongshiyan\\.gradle\\caches\\modules-2\\files-2.1')) //定义本地Gradle仓库的地址
             pom.project {
@@ -73,7 +72,6 @@ uploadArchives {
         }
     }
 }
-*/
 
 publishing {
     publications {
