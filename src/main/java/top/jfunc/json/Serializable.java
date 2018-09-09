@@ -9,9 +9,10 @@ public interface Serializable {
     /**
      * 序列化，把一个JavaBean序列化为String
      * @param javaBean JavaBean对象
+     * @param ignoreFields 忽略那些字段
      * @return String
      */
-    String serialize(Object javaBean);
+    <T> String serialize(T javaBean , String...ignoreFields);
 
     /**
      * 反序列化，把一个字符串反序列化为一个JavaBean
