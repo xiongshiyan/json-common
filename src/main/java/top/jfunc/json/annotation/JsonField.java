@@ -10,7 +10,7 @@ import java.lang.annotation.Target;
  * @author xiongshiyan
  */
 @Retention(RetentionPolicy.RUNTIME)
-@Target({ElementType.FIELD})
+@Target({ElementType.FIELD , ElementType.METHOD})
 public @interface JsonField {
     /**
      * 序列化名字
