@@ -29,7 +29,7 @@ public abstract class BaseMapJSONObject extends BaseJson<BaseMapJSONObject> impl
     }
 
     protected abstract Map<String , Object> str2Map(String jsonString);
-    protected abstract String map2String(Map<String , Object> map);
+    protected abstract String map2Str(Map<String , Object> map);
 
     @Override
     public Map<String , Object> unwrap() {
@@ -306,7 +306,7 @@ public abstract class BaseMapJSONObject extends BaseJson<BaseMapJSONObject> impl
         }
         map.forEach((k , v)-> this.map.put(k , v.unwrap()));
 
-        return map2String(this.map);
+        return map2Str(this.map);
     }
 
 }
