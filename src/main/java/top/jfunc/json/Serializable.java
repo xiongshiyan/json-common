@@ -22,7 +22,7 @@ public interface Serializable {
      * @return String
      */
     default <T> String serialize(T javaBean , String...ignoreFields){
-        return serialize(javaBean , true , ignoreFields);
+        return serialize(javaBean , false , ignoreFields);
     }
 
     /**
