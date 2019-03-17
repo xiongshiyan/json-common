@@ -1,7 +1,7 @@
 # common-json
 common json interface define and base impl with map and  list
 
-我们项目中可能会用到许多的json框架，Fastjson、jackson、Gson、orgjson、json-lib，其实现方式各不相同，接口Api就不一样，我们想换一个json框架改动的地方就会很多。参考SLF4J的思想，我统一了json框架的调用方式。定义了顶层的json接口，其下定义了代表JsonObject和JsonArray的top.jfunc.json.JsonObject和top.jfunc.json.JsonArray接口，不同的json框架去实现此接口。其实现类为top.jfunc.json.impl.JSONObject和top.jfunc.json.impl.JSONArray。 **_注意所有的框架实现，这两个类名不变_** 。于是调用方完全不用修改代码。详细说明如下：
+我们项目中可能会用到许多的json框架，Fastjson、jackson、Gson、orgjson、json-lib，其实现方式各不相同，接口Api就不一样，我们想换一个json框架改动的地方就会很多。参考SLF4J的思想，我统一了json框架的调用方式。定义了顶层的json接口，其下定义了代表JsonObject和JsonArray的 **_top.jfunc.json.JsonObject_** 和 **_top.jfunc.json.JsonArray_** 接口，不同的json框架去实现此接口。其实现类为 **_top.jfunc.json.impl.JSONObject_** 和 _**top.jfunc.json.impl.JSONArray**_ 。 **_注意所有的框架实现，这两个类名不变_** 。于是调用方完全不用修改代码。详细说明如下：
 
 @link 
 
