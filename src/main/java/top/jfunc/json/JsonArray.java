@@ -1,5 +1,7 @@
 package top.jfunc.json;
 
+import top.jfunc.json.kit.StrKit;
+
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Collection;
@@ -134,4 +136,30 @@ public interface JsonArray extends Json<JsonArray> {
      * @return this
      */
     JsonArray fromList(List<Object> list);
+
+    /**
+     * @inheritDoc
+     */
+    @Override
+    default Object getByPath(String path){
+        if(path.contains(".")){
+            String[] fs = path.split("\\.");
+            String first = fs[0];
+            if(StrKit.isNumeric(first)){
+                Object o = get(Integer.parseInt(first));
+                Json json = toJson( o );
+                return json.getByPath(path.substring(path.indexOf(".") + 1));
+            }
+            throw new JsonException("error path to resolve value in jsonArray");
+        }else {
+            return get(Integer.parseInt(path));
+        }
+    }
+
+    /**
+     * List、特定的像fastjson的JSONArray这种转换为JsonArray
+     */
+    default JsonArray toJsonArray(Object o){
+        return (JsonArray) toJson(o);
+    }
 }

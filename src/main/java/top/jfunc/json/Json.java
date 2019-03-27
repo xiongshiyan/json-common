@@ -52,4 +52,19 @@ public interface Json<T extends Json> {
      * @return 实现JsonObject和JsonArray的对象
      */
     Object unwrap();
+
+    /**
+     * 根据指定的路径获取
+     * 对JsonObject和JsonArray对path的要求不同:
+     * JsonObject的模式:   topics[0].articles[0].reviews[0]
+     * JsonArray的模式:    0.topics[0].articles[0]
+     * @param path 路径
+     * @return value
+     */
+    Object getByPath(String path);
+
+    /**
+     * Map->JsonObject,List->JsonArray，特定的类型转换为JsonObject、JsonArray
+     */
+    Json toJson(Object o);
 }

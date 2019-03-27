@@ -1,5 +1,7 @@
 package top.jfunc.json;
 
+import top.jfunc.json.kit.JsonPathResolver;
+
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Map;
@@ -235,4 +237,24 @@ public interface JsonObject extends Json<JsonObject>, Serializable {
      * @return this
      */
     JsonObject putAll(Map<? extends String, ? extends Object> m);
+
+
+    /**
+     * @inheritDoc
+     */
+    @Override
+    default Object getByPath(String path){
+        if(path.contains(".")){
+            return JsonPathResolver.resolve(this , path);
+        }else {
+            return get(path);
+        }
+    }
+
+    /**
+     * Map、特定的像fastjson的JSONObject这种转换为JsonObject
+     */
+    default JsonObject toJsonObject(Object o){
+        return (JsonObject) toJson(o);
+    }
 }
